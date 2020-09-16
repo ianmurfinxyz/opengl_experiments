@@ -10,8 +10,10 @@
 #include <stdbool.h>
 #include <assert.h>
 #include <stdio.h>
+#include <string>
 #include "drawing.h"
 #include "color.h"
+#include "bitmap_fonts.h"
 
 #define SCREEN_WIDTH_PX 1500
 #define SCREEN_HEIGHT_PX 800
@@ -99,6 +101,8 @@ void init()
   // pipeline. To avoid distortion of the mapped image it is neccessary to ensure the aspect ratio 
   // of the viewport matches that of the clipping planes of the view frustrum/box.
   glViewport(0, 0, static_cast<GLsizei>(w), static_cast<GLsizei>(h));
+
+  glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 }
 
 static void shutdown()
@@ -164,6 +168,12 @@ void draw_scene_2()
   color3 pink {255_rgb, 79_rgb, 149_rgb};
 
   draw_border_fill_rect(200.f, 300.f, 100.f, 100.f, 2.f, deep_navy, pink);
+
+  std::string text1{"abcdefghijklmnopqrstuvwxyz<>:;=?@|~[]\\/^_`'\"!#$%&()*+,-.0123456789ABCDEFGHIJKLMNOPQRSTVWXYZhellokingsandcountrymen"};
+  std::string text2{"this is the end of the world as we know it and I feel fine!"};
+
+  draw_text(500.f, 300.f, text1, dogica_8px, deep_navy);
+  draw_text(500.f, 330.f, text2, dogica_8px, deep_navy);
 
   SDL_GL_SwapWindow(window);
 }

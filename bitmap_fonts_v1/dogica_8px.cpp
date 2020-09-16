@@ -1,11 +1,18 @@
 #include "font.h"
 
-glyph dogica_8px[94] = {
+//
+// This file contains the 'hard-coded' 8px bitmap font dogica. The font struct is defined at
+// the bottom of the file.
+//
 
+//
+// glyphs used in the font.
+//
+glyph dogica_8px_glyphs[ascii_glyph_count] = {
   //
   // char: !
   //
-  {33, 2_px, 0_px, 5_px, 1_px, 7_px, 
+  {33, -2_px, 0_px, 5_px, 1_px, 7_px, 
   {"10000000"_bin,
    "00000000"_bin,
    "10000000"_bin,
@@ -18,7 +25,7 @@ glyph dogica_8px[94] = {
   //
   // char: "
   //
-  {34, 2_px, -4_px, 8_px, 4_px, 3_px, 
+  {34, -2_px, -4_px, 8_px, 4_px, 3_px, 
   {"10100000"_bin,
    "01010000"_bin,
    "01010000"_bin,
@@ -83,7 +90,7 @@ glyph dogica_8px[94] = {
   //
   // char: ' 
   //
-  {39, 2_px, -3_px, 6_px, 2_px, 3_px, 
+  {39, -2_px, -3_px, 6_px, 2_px, 3_px, 
   {"10000000"_bin,
    "01000000"_bin,
    "01000000"_bin,
@@ -96,7 +103,7 @@ glyph dogica_8px[94] = {
   //
   // char: (
   //
-  {40, 2_px, 0_px, 6_px, 2_px, 7_px, 
+  {40, -2_px, 0_px, 6_px, 2_px, 7_px, 
   {"01000000"_bin,
    "10000000"_bin,
    "10000000"_bin,
@@ -109,7 +116,7 @@ glyph dogica_8px[94] = {
   //
   // char: )
   //
-  {41, 2_px, 0_px, 6_px, 2_px, 7_px, 
+  {41, -2_px, 0_px, 6_px, 2_px, 7_px, 
   {"10000000"_bin,
    "01000000"_bin,
    "01000000"_bin,
@@ -148,7 +155,7 @@ glyph dogica_8px[94] = {
   //
   // char: ,
   //
-  {44, 2_px, 1_px, 6_px, 2_px, 3_px, 
+  {44, -2_px, 1_px, 6_px, 2_px, 3_px, 
   {"10000000"_bin,
    "01000000"_bin,
    "01000000"_bin,
@@ -161,7 +168,7 @@ glyph dogica_8px[94] = {
   //
   // char: -
   //
-  {45, 1_px, -2_px, 6_px, 4_px, 1_px, 
+  {45, -1_px, -2_px, 6_px, 4_px, 1_px, 
   {"11110000"_bin,
    "00000000"_bin,
    "00000000"_bin,
@@ -174,7 +181,7 @@ glyph dogica_8px[94] = {
   //
   // char: .
   //
-  {46, 2_px, 0_px, 5_px, 1_px, 1_px, 
+  {46, -2_px, 0_px, 5_px, 1_px, 1_px, 
   {"10000000"_bin,
    "00000000"_bin,
    "00000000"_bin,
@@ -187,7 +194,7 @@ glyph dogica_8px[94] = {
   //
   // char: /
   //
-  {47, 1_px, -1_px, 6_px, 4_px, 8_px, 
+  {47, -1_px, 1_px, 6_px, 4_px, 8_px, 
   {"10000000"_bin,
    "10000000"_bin,
    "01000000"_bin,
@@ -330,7 +337,7 @@ glyph dogica_8px[94] = {
   //
   // char: :
   //
-  {58, 2_px, -1_px, 6_px, 1_px, 4_px, 
+  {58, -1_px, -1_px, 4_px, 1_px, 4_px, 
   {"10000000"_bin,
    "00000000"_bin,
    "10000000"_bin,
@@ -343,7 +350,7 @@ glyph dogica_8px[94] = {
   //
   // char: ;
   //
-  {59, 2_px, 1_px, 6_px, 2_px, 5_px, 
+  {59, -1_px, 1_px, 4_px, 2_px, 5_px, 
   {"10000000"_bin,
    "01000000"_bin,
    "01000000"_bin,
@@ -356,7 +363,7 @@ glyph dogica_8px[94] = {
   //
   // char: <
   //
-  {60, 1_px, -1_px, 6_px, 4_px, 5_px, 
+  {60, -1_px, -1_px, 6_px, 4_px, 5_px, 
   {"00100000"_bin,
    "01000000"_bin,
    "10000000"_bin,
@@ -382,7 +389,7 @@ glyph dogica_8px[94] = {
   //
   // char: >
   //
-  {62, 1_px, -1_px, 6_px, 4_px, 5_px, 
+  {62, -1_px, -1_px, 6_px, 4_px, 5_px, 
   {"10000000"_bin,
    "01000000"_bin,
    "00100000"_bin,
@@ -525,7 +532,7 @@ glyph dogica_8px[94] = {
   //
   // char: I
   //
-  {73, 1_px, 0_px, 5_px, 3_px, 7_px, 
+  {73, -1_px, 0_px, 4_px, 3_px, 7_px, 
   {"11100000"_bin,
    "01000000"_bin,
    "01000000"_bin,
@@ -538,7 +545,7 @@ glyph dogica_8px[94] = {
   //
   // char: J
   //
-  {74, 1_px, 0_px, 5_px, 4_px, 7_px, 
+  {74, -1_px, 0_px, 5_px, 4_px, 7_px, 
   {"11000000"_bin,
    "00100000"_bin,
    "00100000"_bin,
@@ -564,7 +571,7 @@ glyph dogica_8px[94] = {
   //
   // char: L
   //
-  {76, 1_px, 0_px, 5_px, 4_px, 7_px, 
+  {76, -1_px, 0_px, 5_px, 4_px, 7_px, 
   {"11110000"_bin,
    "10000000"_bin,
    "10000000"_bin,
@@ -759,7 +766,7 @@ glyph dogica_8px[94] = {
   //
   // char: [
   //
-  {91, 2_px, 0_px, 6_px, 2_px, 7_px, 
+  {91, -2_px, 0_px, 6_px, 2_px, 7_px, 
   {"11000000"_bin,
    "10000000"_bin,
    "10000000"_bin,
@@ -772,20 +779,20 @@ glyph dogica_8px[94] = {
   //
   // char: \
   //
-  {92, 1_px, 1_px, 6_px, 4_px, 7_px, 
-  {"10000000"_bin,
-   "10000000"_bin,
-   "01000000"_bin,
-   "01000000"_bin,
-   "00100000"_bin,
-   "00100000"_bin,
+  {92, -1_px, 1_px, 6_px, 4_px, 8_px, 
+  {"00010000"_bin,
    "00010000"_bin,
-   "00010000"_bin}
+   "00100000"_bin,
+   "00100000"_bin,
+   "01000000"_bin,
+   "01000000"_bin,
+   "10000000"_bin,
+   "10000000"_bin}
   },
   //
   // char: ]
   //
-  {93, 2_px, 0_px, 6_px, 2_px, 7_px, 
+  {93, -2_px, 0_px, 6_px, 2_px, 7_px, 
   {"11000000"_bin,
    "01000000"_bin,
    "01000000"_bin,
@@ -798,7 +805,7 @@ glyph dogica_8px[94] = {
   //
   // char: ^
   //
-  {94, 1_px, -4_px, 6_px, 4_px, 2_px, 
+  {94, -1_px, -4_px, 6_px, 4_px, 2_px, 
   {"10010000"_bin,
    "01100000"_bin,
    "00000000"_bin,
@@ -824,7 +831,7 @@ glyph dogica_8px[94] = {
   //
   // char: `
   //
-  {96, 2_px, -3_px, 6_px, 2_px, 3_px, 
+  {96, -2_px, -3_px, 6_px, 2_px, 3_px, 
   {"01000000"_bin,
    "01000000"_bin,
    "10000000"_bin,
@@ -902,7 +909,7 @@ glyph dogica_8px[94] = {
   //
   // char: f
   //
-  {102, 1_px, 0_px, 5_px, 5_px, 7_px, 
+  {102, -1_px, 0_px, 5_px, 5_px, 7_px, 
   {"01000000"_bin,
    "01000000"_bin,
    "01000000"_bin,
@@ -941,7 +948,7 @@ glyph dogica_8px[94] = {
   //
   // char: i
   //
-  {105, 1_px, 0_px, 5_px, 3_px, 7_px, 
+  {105, -1_px, 0_px, 4_px, 3_px, 7_px, 
   {"11100000"_bin,
    "01000000"_bin,
    "01000000"_bin,
@@ -954,14 +961,14 @@ glyph dogica_8px[94] = {
   //
   // char: j
   //
-  {106, 1_px, 1_px, 5_px, 3_px, 7_px, 
+  {106, -1_px, 1_px, 4_px, 2_px, 7_px, 
   {"10000000"_bin,
    "01000000"_bin,
    "01000000"_bin,
    "01000000"_bin,
    "01000000"_bin,
+   "00000000"_bin,
    "01000000"_bin,
-   "11100000"_bin,
    "00000000"_bin}
   },
   //
@@ -980,7 +987,7 @@ glyph dogica_8px[94] = {
   //
   // char: l
   //
-  {108, 1_px, 0_px, 5_px, 3_px, 6_px, 
+  {108, -1_px, 0_px, 4_px, 3_px, 6_px, 
   {"01100000"_bin,
    "10000000"_bin,
    "10000000"_bin,
@@ -1032,7 +1039,7 @@ glyph dogica_8px[94] = {
   //
   // char: p
   //
-  {112, 0_px, 1_px, 5_px, 5_px, 6_px,
+  {112, 0_px, 1_px, 5_px, 5_px, 7_px,
   {"10000000"_bin,
    "10000000"_bin,
    "11110000"_bin,
@@ -1045,7 +1052,7 @@ glyph dogica_8px[94] = {
   //
   // char: q
   //
-  {113, 0_px, 1_px, 5_px, 5_px, 6_px, 
+  {113, 0_px, 1_px, 5_px, 5_px, 7_px, 
   {"00001000"_bin,
    "00001000"_bin,
    "01111000"_bin,
@@ -1058,7 +1065,7 @@ glyph dogica_8px[94] = {
   //
   // char: r
   //
-  {114, 1_px, 0_px, 5_px, 4_px, 6_px, 
+  {114, -1_px, 0_px, 5_px, 4_px, 6_px, 
   {"10000000"_bin,
    "10000000"_bin,
    "10000000"_bin,
@@ -1084,7 +1091,7 @@ glyph dogica_8px[94] = {
   //
   // char: t
   //
-  {116, 1_px, 0_px, 5_px, 4_px, 7_px,
+  {116, -1_px, 0_px, 5_px, 4_px, 7_px,
   {"01110000"_bin,
    "10000000"_bin,
    "10000000"_bin,
@@ -1097,7 +1104,7 @@ glyph dogica_8px[94] = {
   //
   // char: u
   //
-  {117, 1_px, 0_px, 5_px, 4_px, 6_px, 
+  {117, 0_px, 0_px, 5_px, 5_px, 6_px, 
   {"01101000"_bin,
    "10011000"_bin,
    "10001000"_bin,
@@ -1110,13 +1117,13 @@ glyph dogica_8px[94] = {
   //
   // char: v
   //
-  {118, 1_px, 0_px, 5_px, 4_px, 6_px,
+  {118, 0_px, 0_px, 5_px, 5_px, 6_px,
   {"00100000"_bin,
    "01010000"_bin,
-   "01001000"_bin,
-   "10000100"_bin,
-   "10000100"_bin,
-   "10000100"_bin,
+   "01010000"_bin,
+   "10001000"_bin,
+   "10001000"_bin,
+   "10001000"_bin,
    "00000000"_bin,
    "00000000"_bin}
   },
@@ -1149,14 +1156,14 @@ glyph dogica_8px[94] = {
   //
   // char: y
   //
-  {121, 0_px, 0_px, 5_px, 5_px, 6_px, 
+  {121, 0_px, 1_px, 5_px, 5_px, 7_px, 
   {"11000000"_bin,
    "00100000"_bin,
    "01100000"_bin,
    "10010000"_bin,
    "10010000"_bin,
    "10010000"_bin,
-   "00000000"_bin,
+   "10010000"_bin,
    "00000000"_bin}
   },
   //
@@ -1175,7 +1182,7 @@ glyph dogica_8px[94] = {
   //
   // char: {
   //
-  {123, 1_px, 0_px, 5_px, 3_px, 7_px,
+  {123, -1_px, 0_px, 5_px, 3_px, 7_px,
   {"00100000"_bin,
    "01000000"_bin,
    "01000000"_bin,
@@ -1188,7 +1195,7 @@ glyph dogica_8px[94] = {
   //
   // char: |
   //
-  {124, 2_px, 1_px, 5_px, 1_px, 8_px, 
+  {124, -2_px, 1_px, 5_px, 1_px, 8_px, 
   {"10000000"_bin,
    "10000000"_bin,
    "10000000"_bin,
@@ -1201,7 +1208,7 @@ glyph dogica_8px[94] = {
   //
   // char: }
   //
-  {125, 1_px, 0_px, 5_px, 3_px, 7_px,
+  {125, -1_px, 0_px, 5_px, 3_px, 7_px,
   {"10000000"_bin,
    "01000000"_bin,
    "01000000"_bin,
@@ -1225,3 +1232,10 @@ glyph dogica_8px[94] = {
    "00000000"_bin}
   }
 };
+
+//
+// the font object.
+//
+bitmap_font dogica_8px {dogica_8px_glyphs, 10_px, 5_px, 2_px};
+
+

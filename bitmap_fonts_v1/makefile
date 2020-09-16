@@ -2,8 +2,8 @@
 LDLIBS = -lSDL2 -lGLX_mesa
 CXXFLAGS = -g -Wall
 
-cxxsrc = drawing.cpp main.cpp
-cxxinc = drawing.h color.h
+cxxsrc = drawing.cpp main.cpp dogica_8px.cpp font.cpp
+cxxinc = drawing.h color.h bitmap_fonts.h font.h
 
 goal = demo
 

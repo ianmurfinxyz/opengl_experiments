@@ -1,11 +1,12 @@
 #ifndef _FONT_H_
 #define _FONT_H_
 
-#include <iostream>
 #include <cmath>
 
 using U8 = unsigned char;
 using I8 = char;
+
+const int ascii_glyph_count{94};
 
 constexpr U8 operator"" _bin(const char *binary, long unsigned int n)
 {
@@ -46,15 +47,12 @@ struct glyph
 
 void print_glyph(const glyph& g);
 
-//class bitmap_font
-//{
-//public:
-//
-//
-//private:
-//  glyph glyphs[94]; // 94 printable ascii characters
-//  U8 leading_px;
-//  U8 glyph_spacing_px;
-//};
+struct bitmap_font
+{
+  const glyph (&glyphs)[ascii_glyph_count];
+  U8 leading_px;
+  U8 word_spacing_px;
+  U8 glyph_spacing_px;
+};
 
 #endif

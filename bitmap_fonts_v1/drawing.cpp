@@ -1,6 +1,8 @@
 
 #include <SDL2/SDL_opengl.h>
+#include <string>
 #include "color.h"
+#include "font.h"
 
 //
 // note - the functions in this module will not restore the opengl state to what it was upon
@@ -102,4 +104,25 @@ void draw_border_fill_rect(float x, float y, float width, float height, float th
   glColor3f(border.r, border.g, border.b);
   glLineWidth(thickness);
   glDrawArrays(GL_POLYGON, 0, 4);
+}
+
+void draw_text(float x, float y, const std::string &text, const bitmap_font &font, const color3 &font_color)
+{
+  glColor3f(font_color.r, font_color.g, font_color.b);
+  glRasterPos2f(x, y);
+  for(char c : text) {
+    int index = static_cast<int>(c & 0xff) - 33;
+
+    if(index == -1){
+      glBitmap(0, 0, 0, 0, font.word_spacing_px, 0, nullptr);
+      continue;
+    }
+
+    if(!(0 <= index && index < ascii_glyph_count))
+      continue;
+
+    const glyph &g = font.glyphs[index];
+    glBitmap(g.width_px, g.height_px, g.bearing_x_px, g.decender_px, g.advance_px + font.glyph_spacing_px, 0, g.bitmap);
+  }
+  glFlush();
 }

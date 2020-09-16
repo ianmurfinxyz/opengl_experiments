@@ -3,6 +3,6 @@
 
 #include "font.h"
 
-extern glyph dogica_8px[94];
+extern bitmap_font dogica_8px;
 
 #endif
